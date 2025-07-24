@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "500521032770",
+    "project_id": "reco-genie-restaurant-app",
+    "storage_bucket": "reco-genie-restaurant-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:500521032770:android:211ac05408b0750c41a1db",
+        "android_client_info": {
+          "package_name": "com.example.reco_genie_restaurant_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAM5sM4atFD2Iqs-gRoH9auNTa5lbKOyZI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
