@@ -23,4 +23,8 @@ class AppColors {
   static const Color buttonSecondary = secondary;
 
   static const Color borderLight = Color(0xFFE0E0E0);
+
+  static const Color borderDark = Color(0xFF424242);
+  static const Color shadowLight = Color(0xFFBDBDBD);
+
 }

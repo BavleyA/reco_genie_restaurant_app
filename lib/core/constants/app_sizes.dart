@@ -7,6 +7,16 @@ class AppSizes {
   static const double cardElevation = 4.0;
   static const double borderRadius = 8.0;
 
+  static const double defaultSpacing = 16.0;
+
+  static const double sizedBoxHeightSm = 8;
+  static const double sizedBoxHeightMd = 16;
+  static const double sizedBoxHeightLg = 24;
+
+  static const double sizedBoxWidthSm = 8;
+  static const double sizedBoxWidthMd = 16;
+  static const double sizedBoxWidthLg = 24;
+
   static const double paddingSmall = 8.0;
   static const double paddingMedium = 16.0;
   static const double paddingLarge = 24.0;
