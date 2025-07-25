@@ -10,6 +10,8 @@ import '../../../../core/constants/app_text_style.dart';
 import '../../../../core/constants/app_text_style.dart';
 import '../../../../core/constants/app_text_style.dart';
 import '../../../../core/utils/helper.dart';
+import '../widgets/login_screen_divider.dart';
+import '../widgets/social_login_icons.dart';
 
 class LoginScreen extends StatefulWidget {
 
@@ -155,73 +157,11 @@ class _LoginScreenState extends State<LoginScreen> {
 
               const SizedBox(height: AppSizes.sizedBoxWidthLg,),
 
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Flexible(
-                    child: Divider(color: dark ? AppColors.shadowLight : AppColors.borderDark,
-                      thickness: 0.5, endIndent: 10, indent: 10,),
-                  ),
-                  Text(AppStrings.orText,
-                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      color: dark ? Colors.white : Colors.black,
-                    ),
-                  ),
-                  Flexible(
-                    child: Divider(color: dark ? AppColors.shadowLight : AppColors.borderDark,
-                      thickness: 0.5, endIndent: 10, indent: 10,),
-                  ),
-                ],
-              ),
+              LoginScreenDivider(dark: dark),
 
               const SizedBox(height: AppSizes.sizedBoxHeightMd,),
 
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: AppColors.borderDark,
-                      ),
-                      borderRadius: BorderRadius.circular(100),
-
-                    ),
-                    child: IconButton(
-                        onPressed: (){},
-                        icon: const Image(
-                          width: AppSizes.iconSizeMedium,
-                            height: AppSizes.iconSizeMedium,
-                            image: AssetImage(AppImageStrings.google),
-
-                        )
-                    ),
-                  ),
-
-                  const SizedBox(width : AppSizes.sizedBoxWidthMd,),
-
-                  Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: AppColors.borderDark,
-                      ),
-                      borderRadius: BorderRadius.circular(100),
-
-                    ),
-                    child: IconButton(
-                        onPressed: (){},
-                        icon: const Image(
-                          width: AppSizes.iconSizeMedium,
-                          height: AppSizes.iconSizeMedium,
-                          image: AssetImage(AppImageStrings.facebook),
-
-                        )
-                    ),
-                  ),
-                ],
-              ),
-
-
+              const SocialLoginIcons(),
             ],
           ),
         ),
@@ -229,3 +169,5 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
+
+
