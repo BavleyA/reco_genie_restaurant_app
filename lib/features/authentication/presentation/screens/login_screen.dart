@@ -1,21 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:reco_genie_restaurant_app/core/constants/app_colors.dart';
 import 'package:reco_genie_restaurant_app/core/constants/app_sizes.dart';
 import 'package:reco_genie_restaurant_app/core/utils/validators.dart';
 import 'package:reco_genie_restaurant_app/features/authentication/presentation/widgets/custom_auth_text_form_field.dart';
-
-import '../../../../core/constants/app_image_strings.dart';
 import '../../../../core/constants/app_strings.dart';
-import '../../../../core/constants/app_text_style.dart';
-import '../../../../core/constants/app_text_style.dart';
-import '../../../../core/constants/app_text_style.dart';
 import '../../../../core/utils/helper.dart';
+import '../widgets/elevated_button.dart';
+import '../widgets/forget_password_widget.dart';
 import '../widgets/login_screen_divider.dart';
+import '../widgets/outlined_button.dart';
 import '../widgets/social_login_icons.dart';
 
 class LoginScreen extends StatefulWidget {
-
-
 
   LoginScreen({super.key});
 
@@ -39,6 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
     return Scaffold(
       body: SingleChildScrollView(
+
         child: Padding(
           padding: EdgeInsets.only(
             top: AppSizes.appBarHeight,
@@ -46,11 +42,13 @@ class _LoginScreenState extends State<LoginScreen> {
             right: AppSizes.defaultSpacing,
             bottom: AppSizes.defaultSpacing,
           ),
+
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
+
                 children: [
                   Text(
                    AppStrings.loginTitle,
@@ -73,6 +71,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 key: _formKey,
                   child: Column(
                     children: [
+
                       CustomAuthTextFormField(
                           label: AppStrings.emailLabel,
                           onChanged: (value){},
@@ -95,60 +94,25 @@ class _LoginScreenState extends State<LoginScreen> {
                               ? Icons.visibility_off_outlined
                               : Icons.visibility_outlined,
                       ),
+
                       const SizedBox(height: AppSizes.sizedBoxHeightSm,),
 
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Align(
-                            alignment: Alignment.centerRight,
-                            child: TextButton(
-                              child: Center(
-                                child: Text(AppStrings.forgotPasswordText,
-                                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                                    color: dark ? Colors.white : Colors.black,
-                                    decorationThickness: 2,
-                                    decoration: TextDecoration.underline,
-                                    height: 3,
-                                  ),
-                                ),
-                              ),
-                              onPressed: () {},
-                            ),
-                          ),
-                        ],
-                      ),
+                      ForgetPass(dark: dark),
 
                       const SizedBox(height: AppSizes.sizedBoxHeightMd,),
 
-                      SizedBox(
-                        width: double.infinity,
-                        child: ElevatedButton(
-                            onPressed: (){
-                              _formKey.currentState?.validate();
-                            },
-                            child: Text(
-                              AppStrings.loginButtonText,
-                              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                                color: dark ? Colors.black : Colors.white,
-                              ),
-                            )),
+                      ElevatedAuthButton(
+                        formKey: _formKey,
+                        dark: dark ,
+                        text: AppStrings.loginButtonText,
+                        email: emailController.text,
+                        password: passwordController.text,
+
                       ),
 
                       const SizedBox(height: AppSizes.sizedBoxHeightSm,),
 
-                      SizedBox(
-                        width: double.infinity,
-                        child: OutlinedButton(
-                          onPressed: (){},
-                            child: Text(
-                              AppStrings.createAccountText,
-                              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                                color: dark ? Colors.white : Colors.black,
-                              ),
-                            ),
-                        ),
-                      ),
+                      OutlinedAuthButton(dark: dark),
 
                     ],
 
@@ -169,5 +133,3 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
-
-

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:reco_genie_restaurant_app/SharedConfig/theme/theme.dart';
 import 'package:reco_genie_restaurant_app/features/authentication/presentation/screens/login_screen.dart';
 
+import 'SharedConfig/routes/app_routes.dart';
+
 class App extends StatelessWidget {
   const App({super.key});
 
@@ -14,7 +16,8 @@ class App extends StatelessWidget {
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
 
-      home: LoginScreen(),
+      initialRoute: RouteManager.login,
+      onGenerateRoute: RouteManager.generateRoute,
 
     );
   }
