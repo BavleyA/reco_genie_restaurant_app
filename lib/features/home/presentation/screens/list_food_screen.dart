@@ -23,6 +23,7 @@ class FoodListScreen extends StatelessWidget {
         title: const Text('Food Menu'),
         backgroundColor: Colors.orange,
         foregroundColor: Colors.white,
+        automaticallyImplyLeading: false,
       ),
       body: ListView.builder(
         padding: const EdgeInsets.all(8),

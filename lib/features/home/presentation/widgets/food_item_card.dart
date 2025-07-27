@@ -76,6 +76,7 @@ class FoodItemCart extends StatelessWidget {
               ),
             ),
             IconButton(
+
               onPressed: isInCart ? null : () => onAddToCart(food),
               icon: Icon(isInCart ? Icons.check : Icons.add_shopping_cart),
               // label: Text(isInCart ? 'Added' : 'Add'),
